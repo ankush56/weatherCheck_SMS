@@ -7,7 +7,7 @@ load_dotenv()
 
 url = "http://api.openweathermap.org/data/2.5/onecall"
 
-API_KEY = '5faa2643696ecd41624cd956047a1e0b'
+API_KEY = os.environ.get('API_KEY')
 MY_LAT = '42.775140'
 MY_LONG = '-81.185980'
 
@@ -28,13 +28,7 @@ response = requests.get(url, parameters)
 response.raise_for_status()
 data = response.json()
 
-# print(data)
-#
-# counter = 0
-# while counter < 12:
 
-#
-#         counter = counter + 1
 
 msg = "Bring an Umbrella, chances of rain in next 12 hours"
 weather_slice = data["hourly"][:12]
