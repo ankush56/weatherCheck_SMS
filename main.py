@@ -44,7 +44,7 @@ for x in weather_slice:
     hour_data = x["weather"]
     weather_id = hour_data[0]['id']
 
-    if int(weather_id) > 700:
+    if int(weather_id) < 700:
         will_rain = True
 
 if will_rain:
@@ -52,7 +52,7 @@ if will_rain:
     message = client.messages \
     .create(
     body=msg,
-    to='+14165206267',
+    to=os.environ.get('dest'),
     from_='+18643839494'
     )
 

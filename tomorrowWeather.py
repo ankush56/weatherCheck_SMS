@@ -40,7 +40,8 @@ feels_like = tomorrow["feels_like"]['day']
 print(f"weather {weather} max {max} min {min} feels{feels_like}")
 
 sms_text = f"Tomorrow weather will have {weather} with max temp {max} and min temp {min}" \
-    f" and feels like will be {feels_like} C"
+    f" and feels like will be {feels_like} C"\
+    f" Bonishhhhhhhhhhh :)"
 
 # msg = "Bring an Umbrella, chances of rain in next 12 hours"
 # weather_slice = data["hourly"][:12]
@@ -54,7 +55,7 @@ print(sms_text)
 message = client.messages \
     .create(
     body=sms_text,
-    to='+14165206267',
+    to=os.environ.get('dest'),
     from_='+18643839494'
     )
 
